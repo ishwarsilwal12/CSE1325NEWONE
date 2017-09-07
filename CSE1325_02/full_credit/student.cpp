@@ -4,11 +4,7 @@ string student_name;
 double exam_sum;
 double exam_num_grades;
 public:
-Student(string name){
-student_name=name;
-exam_sum=0;
-exam_num_grades=0;
-}
+Student(string name) : student_name{student_name=name}, exam_sum{exam_sum=0}, exam_num_grades{exam_num_grades=0} {} 
 string name(){
 return student_name;
 }
