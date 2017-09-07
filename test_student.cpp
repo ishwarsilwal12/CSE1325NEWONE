@@ -3,14 +3,19 @@ using namespace std;
 #include "student.cpp"
 int main(){
 string name;
-double grade;
+double homeworkgrades;
+double examgrades;
+int i=0;
 cout << "Enter student name: ";
 cin >> name;
 Student student(name);
-while(grade >= 0){
-cout << "Enter next grade: ";
-cin >> grade;
-student.exam(grade);
+while(i < 5){
+cout << "Enter next homework grade: ";
+cin >> homeworkgrades;
+student.exam(0);
+student.homework(homeworkgrades);
+i++;
 }
+
 cout << student.name() << " has a " << student.average() << "." << endl;
 }

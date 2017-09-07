@@ -1,3 +1,5 @@
+# include <iostream>
+using namespace std;
 class Student{
 private:
 string student_name;
@@ -13,19 +15,8 @@ string name(){
 return student_name;
 }
 void exam(double grades){
-if ((grades < 0) && (exam_num_grades == 0))
-{
-exam_sum=100;
-exam_num_grades=1;
-}
-else if (grades < 0){
-exam_sum=exam_sum;
-exam_num_grades = exam_num_grades;
-}
-else {
 exam_sum=exam_sum+grades;
 exam_num_grades += 1;
-}
 }
 double average(){
 double avg;
@@ -33,3 +24,16 @@ avg = (exam_sum)/exam_num_grades;
 return avg;
 }
 };
+int main(){
+string name;
+double grades;
+cout << "Enter students name: ";
+cin >> name;
+Student student(name);
+while( grades < 0 ){
+cout << "Enter next grade: ";
+cin >> grades;
+student.exam(grades);
+}
+cout << student.name() << student.average();
+}

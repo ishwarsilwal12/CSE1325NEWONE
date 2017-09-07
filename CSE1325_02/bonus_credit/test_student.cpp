@@ -3,24 +3,19 @@ using namespace std;
 #include "student.cpp"
 int main(){
 string name;
-int i;
-double grade;
-Student student("Bjarne Stroustrup");
-while(i < 3){
-cout << "Enter next grade: ";
-cin >> grade;
-student.exam(grade);
+double homeworkgrades;
+double examgrades;
+int i=0;
+cout << "Enter student name: ";
+cin >> name;
+Student student(name);
+while(i < 5){
+cout << "Enter next homework grade: ";
+cin >> homeworkgrades;
+student.exam(0);
+student.homework(homeworkgrades);
 i++;
 }
-if (student.name() != "Bjarne Stroustrup"){
-cout << "ERROR NAME" << endl;
-}
-if (student.average() != 90.0){
-cout << "ERROR AVERAGE" << endl;
-}
-Student nada("Ishwar");
-if(nada.average() != 100)
-{
-cout << "ERROR IN TEST SECOND" <<endl;
-}
+
+cout << student.name() << " has a " << student.average() << "." << endl;
 }
